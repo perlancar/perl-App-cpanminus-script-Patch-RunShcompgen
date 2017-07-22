@@ -32,7 +32,7 @@ my $p_install = sub {
 
         last unless @exes;
 
-        say "Running shcompgen generate ".join(" ", @exes) if $ENV{DEBUG};
+        say "Running shcompgen generate --replace ".join(" ", @exes) if $ENV{DEBUG};
         system "shcompgen", "generate", "--replace", @exes;
     }
 
