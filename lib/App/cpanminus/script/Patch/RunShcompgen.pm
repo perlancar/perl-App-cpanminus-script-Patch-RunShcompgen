@@ -19,9 +19,17 @@ my $p_install = sub {
     my $res = $orig->(@_);
 
     {
-        last unless $res; # installation failed
+        warn __PACKAGE__.": Running install() ...\n" if $ENV{DEBUG};
+        unless ($res) {
+            # installation failed
+            warn "  Returning, installation failed\n" if $ENV{DEBUG};
+            last;
+        }
 
-        last unless which("shcompgen");
+        unless (which("shcompgen")) {
+            warn __PACKAGE__.": Skipped, shcompgen not found\n" if $ENV{DEBUG};
+            last;
+        }
 
         # list the exes that got installed
         my @exes;
@@ -30,9 +38,12 @@ my $p_install = sub {
             push @exes, $_;
         }
 
-        last unless @exes;
+        unless (@exes) {
+            warn __PACKAGE__.": Skipped, no exes found\n" if $ENV{DEBUG};
+            return;
+        }
 
-        say "Running shcompgen generate --replace ".join(" ", @exes) if $ENV{DEBUG};
+        warn __PACKAGE__.": Running shcompgen generate --replace ".join(" ", @exes)."\n" if $ENV{DEBUG};
         system "shcompgen", "generate", "--replace", @exes;
     }
 
