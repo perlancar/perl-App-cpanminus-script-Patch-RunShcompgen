@@ -40,7 +40,7 @@ my $p_install = sub {
 
         unless (@exes) {
             warn __PACKAGE__.": Skipped, no exes found\n" if $ENV{DEBUG};
-            return;
+            last;
         }
 
         warn __PACKAGE__.": Running shcompgen generate --replace ".join(" ", @exes)."\n" if $ENV{DEBUG};
