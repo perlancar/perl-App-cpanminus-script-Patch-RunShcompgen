@@ -1,23 +1,23 @@
-0.004   2018-02-20 (PERLANCAR)
+0.004   2018-02-20  Released-By: PERLANCAR
 
 	- [Bugfix] Used 'return' instead of 'last' to return original
 	  install() result.
 
 
-0.003   2018-02-18 (PERLANCAR)
+0.003   2018-02-18  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Add more debug messages.
 
 
-0.002   2017-07-22 (PERLANCAR)
+0.002   2017-07-22  Released-By: PERLANCAR
 
 	- Use shcompgen option --replace.
 
 	- Add debug message on DEBUG=1.
 
 
-0.001   2017-07-10 (PERLANCAR)
+0.001   2017-07-10  Released-By: PERLANCAR
 
         - First release.
