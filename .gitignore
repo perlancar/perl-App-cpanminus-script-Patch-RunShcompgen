@@ -2,3 +2,4 @@ App-cpanminus-script-Patch-RunShcompgen-*
 .build
 *~
 nytprof*
+.DS_Store
